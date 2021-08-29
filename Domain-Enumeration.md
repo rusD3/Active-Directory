@@ -62,4 +62,4 @@ Get a list of users in the current domain
 - Get-NetUser -UserName example-user
 
 See link for more info
-[PowerView] (https://github.com/PowerShellMafia/PowerSploit/blob/master/Recon/PowerView.ps1)
+[PowerView](https://github.com/PowerShellMafia/PowerSploit/blob/master/Recon/PowerView.ps1)
