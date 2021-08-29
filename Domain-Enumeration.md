@@ -36,7 +36,7 @@ See link below for module options
 Load PowerView
 . .\PowerView.ps1
 
-Getcurrentdomain
+Get current domain
 - Get-NetDomain
 
 Get object of another domain
@@ -61,5 +61,5 @@ Get a list of users in the current domain
 - Get-NetUser
 - Get-NetUser -UserName example-user
 
-
+See link for more info
 [PowerView] (https://github.com/PowerShellMafia/PowerSploit/blob/master/Recon/PowerView.ps1)
