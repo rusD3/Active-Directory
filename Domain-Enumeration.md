@@ -2,7 +2,7 @@
 
 powershell -ExecutionPolicy bypass
 
-Import-Module .\Microsoft.ActiveDirectory.Management.dll
+Import-Module .\Microsoft.ActiveDirectory.Management.dll  
 Import-Module .\Microsoft.ActiveDirectory.Management.resources.dll
 
 Getcurrentdomain
