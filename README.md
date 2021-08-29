@@ -1,5 +1,5 @@
 # Active Directory Methodology Notes
 
-Credit to PayloadAllThings and Pentester Academy 
+Credit to PayloadAllTheThings and Pentester Academy 
 
 More to come soon!
