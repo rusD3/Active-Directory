@@ -2,8 +2,9 @@
 
 powershell -ExecutionPolicy bypass
 
-Import-Module .\Microsoft.ActiveDirectory.Management.dll
-Import-Module .\ActiveDirectory\ActiveDirectory.psd1
+- Import-Module .\Microsoft.ActiveDirectory.Management.dll
+
+- Import-Module .\ActiveDirectory\ActiveDirectory.psd1
 
 Getcurrentdomain
 - Get-ADDomain
