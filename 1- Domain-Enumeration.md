@@ -34,7 +34,7 @@ Get all the groups in the current domain
 - Get-NetGroup –FullData
 
 Get all groups containing the word "admin" in group name
-- Get-NetGroup *admin*
+- Get-NetGroup admin
 
 Get all the members of the Domain Admins group
 - Get-NetGroupMember -GroupName "Domain Admins" -Recurse
