@@ -17,3 +17,6 @@ Search for interesting ACEs
 
 Get the ACLs associated with the specified path
 - Get-PathAcl -Path "\\dcorp-dc.dollarcorp.moneycorp.local\sysvol"
+
+We can also enumerate ACLs using ActiveDirectory module but without resolving GUIDs
+- (Get-Acl'AD:\CN=Administrator,CN=Users,DC=dollarcorp,DC=moneycorp,DC=local').Access

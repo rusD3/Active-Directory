@@ -28,6 +28,10 @@ Get a list of users in the current domain
 - Get-NetUser
 - Get-NetUser -UserName example-user
 
+Search for a particular string in a user's attributes:
+- Find-UserField -SearchField Description -SearchTerm
+"built"
+
 Get all the groups in the current domain
 - Get-NetGroup
 - Get-NetGroup –Domain <targetdomain>
