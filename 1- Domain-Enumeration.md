@@ -1,4 +1,5 @@
 ## **PowerView**
+
 Load PowerView
 . .\PowerView.ps1
 
@@ -26,9 +27,6 @@ Get domain controllers for another domain
 Get a list of users in the current domain
 - Get-NetUser
 - Get-NetUser -UserName example-user
-
-See link for more info
-[PowerView](https://github.com/PowerShellMafia/PowerSploit/blob/master/Recon/PowerView.ps1)
 
 Get all the groups in the current domain
 - Get-NetGroup
@@ -67,3 +65,27 @@ Find sensitive files on computers in the domain
 
 Get all fileservers of the domain
 - Get-NetFileServer
+
+Get list of GPO in current domain
+- Get-NetGPO
+- Get-NetGPO -ComputerName dcorp- student1.dollarcorp.moneycorp.local
+
+Get GPO(s) which use Restricted Groups or groups.xml for interesting users
+- Get-NetGPOGroup
+
+Get users which are in a local group of a machine using GPO
+- Find-GPOComputerAdmin –Computername dcorp-
+- student1.dollarcorp.moneycorp.local
+
+Get machines where the given user is member of a specific group
+- Find-GPOLocation -UserName student1 -Verbose
+
+Get OUs in a domain
+- Get-NetOU -FullData
+
+Get GPO applied on an OU. Read GPOname from gplink attribute from
+- Get-NetOU
+- Get-NetGPO -GPOname "{AB306569-220D-43FF-B03B- 83E8F4EF8081}"
+
+See link for more info
+[PowerView](https://github.com/PowerShellMafia/PowerSploit/blob/master/Recon/PowerView.ps1)
