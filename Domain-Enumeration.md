@@ -1,37 +1,3 @@
-## **Active Directory Management Module**
-
-powershell -ExecutionPolicy bypass
-
-Import-Module .\Microsoft.ActiveDirectory.Management.dll  
-Import-Module .\Microsoft.ActiveDirectory.Management.resources.dll
-
-Getcurrentdomain
-- Get-ADDomain
-
-Get object of another domain
-- Get-ADDomain -Identity example.com
-
-Get domain SID for the current domain
-- (Get-ADDomain).DomainSID
-
-Get domain controllers for the current domain
-- Get-ADDomainController
-
-Get domain controllers for another domain
-- Get-ADDomainController -DomainName example.com -Discover
-
-Get a list of users in the current domain
-- Get-ADUser -Filter * -Properties *
-- Get-ADUser -Identity user1 -Properties *
-- Get-ADUser -Filter * | select SameAccountName
-
-Get list of all properties for users in the current domain
-- Get-ADUser -Filter * -Properties * | select -First 1 | Get-Member -MemberType *Property | select Name
-- Get-ADUser -Filter * -Properties * | select name,@{expression={[datetime]::fromFileTime($_.pwdlastset)}}
-
-See link below for module options
-[Microsoft](https://docs.microsoft.com/en-us/powershell/module/activedirectory/?view=windowsserver2019-ps)
-
 ## **PowerView**
 Load PowerView
 . .\PowerView.ps1
@@ -63,3 +29,41 @@ Get a list of users in the current domain
 
 See link for more info
 [PowerView](https://github.com/PowerShellMafia/PowerSploit/blob/master/Recon/PowerView.ps1)
+
+Get all the groups in the current domain
+- Get-NetGroup
+- Get-NetGroup –Domain <targetdomain>
+- Get-NetGroup –FullData
+
+Get all groups containing the word "admin" in group name
+- Get-NetGroup *admin*
+
+Get all the members of the Domain Admins group
+- Get-NetGroupMember -GroupName "Domain Admins" -Recurse
+
+Get the group membership for a user:
+- Get-NetGroup –UserName "student1"
+
+List all the local groups on a machine (needs administrator privs on non- dc machines)
+- Get-NetLocalGroup -ComputerName dcorp-dc.dollarcorp.moneycorp.local -ListGroups
+
+Get members of all the local groups on a machine (needs administrator privs on non-dc machines)
+- Get-NetLocalGroup -ComputerName dcorp-dc.dollarcorp.moneycorp.local -Recurse
+
+Get actively logged users on a computer (needs local admin rights on the target)
+- Get-NetLoggedon –ComputerName <servername>
+
+Get locally logged users on a computer (needs remote registry on the target-started by-default on server OS)
+- Get-LoggedonLocal -ComputerName dcorp- dc.dollarcorp.moneycorp.local
+
+Get the last logged user on a computer (needs administrative rights and remote registry on the target)
+- Get-LastLoggedOn –ComputerName <servername>
+
+Findsharesonhostsincurrentdomain
+- Invoke-ShareFinder –Verbose
+
+Find sensitive files on computers in the domain
+- Invoke-FileFinder –Verbose
+
+Get all fileservers of the domain
+- Get-NetFileServer
