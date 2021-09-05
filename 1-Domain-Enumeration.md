@@ -32,6 +32,12 @@ Search for a particular string in a user's attributes:
 - Find-UserField -SearchField Description -SearchTerm
 "built"
 
+Get a list of computers in the current domain
+- Get-NetComputer
+- Get-NetComputer –OperatingSystem "*Server 2016*"
+- Get-NetComputer -Ping
+- Get-NetComputer -FullData
+
 Get all the groups in the current domain
 - Get-NetGroup
 - Get-NetGroup –Domain <targetdomain>
